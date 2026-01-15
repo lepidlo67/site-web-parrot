@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style_swap.css">                                                       <!-- connect au fichier css -->
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">      <!-- import de la police audiowide -->
+    <link rel="icon" type="image/png" href="assets/img/logo.png">                                              <!-- logo onglet -->
+    <title>ParrotSwap</title>
+    <meta propety="og:title" content="ParrotSwap Interface" />                                         <!-- Titre de l'aperçu -->
+    <meta property="og:description" content="Redefining Decentralized Finance on HyperEVM." />          <!-- Description visible dans l'aperçu -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> <!-- import de la police flèche bas -->
+
+</head>
+
+<body>
+
+    <header>
+        <div class="left-section">
+            <a href="index_swap.html" class="logo-link">
+                <img src="assets/img/logo.png" alt="Logo" class="logo-img">
+                <div class="audiowide">ParrotSwap</div>
+            </a>
+        </div>
+
+        <!-- CENTRE DU HEADER : navigation -->
+        <nav class="inline-nav">
+            <a href="index_swap.html"class="active-link" >Swap</a>
+            <a href="pages/pools.html">Pools</a>
+            <a href="pages/Stats.html">Stats</a>
+            <a href="pages/Apropos.html">A Propos</a>
+            <a href="pages/Contact.html">Nous Contacter</a>
+        </nav>
+
+        <div class="right-section">
+            <button class="wallet-button">
+                <span class="wallet-text">Connecter Wallet</span>
+                <img src="assets/img/rabby.png" alt="Wallet Logo" class="wallet-icon">
+            </button>
+        </div>
+    </header>
+
+    <!-- swap -->
+    <div class="swap-wrapper">
+        <div class="swap-container">
+            
+            <!-- encadrer noir, contien token -->
+            <div class="swap-box">
+
+                <div class="input-section">
+                    <input id="inputAmount" type="number" step="any" placeholder="0.0" class="amount-input">
+                    <div class="symbol">
+                        ~$ <span id="calculatedValue"></span>
+                    </div>
+                </div>
+                
+                <div>
+                    <!-- Token selection dropdown (INPUT) -->
+                    <div class="token-select dropdown" id="inputTokenDropdown">
+                        <div class="selected-token">
+                            <img class="selected-logo" src="assets/img/hype.webp" alt="HYPE logo">
+                            <span class="selected-name">HYPE</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="dropdown-menu">
+                            <div class="token-option" data-token="HYPE" data-logo="assets/img/hype.webp">
+                                <img src="assets/img/hype.webp" alt="HYPE"> HYPE
+                            </div>
+                            <div class="token-option" data-token="stHYPE" data-logo="assets/img/sthype.png">
+                                <img src="assets/img/sthype.png" alt="stHYPE Logo"> stHYPE
+                            </div>
+                            <div class="token-option" data-token="BUDDY" data-logo="assets/img/buddy.png">
+                                <img src="assets/img/buddy.png" alt="BUDDY"> BUDDY
+                            </div>
+                            <div class="token-option" data-token="USDXL" data-logo="assets/img/usdxl.svg">
+                                <img src="assets/img/usdxl.svg" alt="USDXL"> USDXL
+                            </div>
+                            <div class="token-option" data-token="KEI" data-logo="assets/img/KEI.jpg">
+                                <img src="assets/img/KEI.jpg" alt="KEI"> KEI
+                            </div>
+                            <div class="token-option" data-token="CATBAL" data-logo="assets/img/CATBAL.svg">
+                                <img src="assets/img/CATBAL.svg" alt="CATBAL"> CATBAL
+                            </div>
+                            <div class="token-option" data-token="FEUSD" data-logo="assets/img/feUSD.png">
+                                <img src="assets/img/feUSD.png" alt="FEUSD"> FEUSD
+                            </div>
+                            <div class="token-option" data-token="mHYPE" data-logo="assets/img/mHYPE.jpg">
+                                <img src="assets/img/mHYPE.jpg" alt="mHYPE"> mHYPE
+                            </div>
+                            <div class="token-option" data-token="USDT0" data-logo="assets/img/USDT0.png">
+                                <img src="assets/img/USDT0.png" alt="USDT0"> USDT0
+                            </div>
+                            <div class="token-option" data-token="PIP" data-logo="assets/img/PIP.jpg">
+                                <img src="assets/img/PIP.jpg" alt="PIP"> PIP
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="amount-mini">
+                        36 HYPE <span class="max">Max</span>                      <!-- donne la taille de la box hype -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="arrow">
+                <div class="button-wrapper">
+                    <button id="swapButton">⇅</button>
+                </div>
+            </div>
+
+            <div class="swap-box">
+                <div class="input-section">
+                    <input id="outputAmount" class="amount-output" type="text" placeholder="0.0" readonly>
+                    <div class="symbol">~$ <span id="calculatedValueOutput"></span></div>
+                </div>
+                
+                <div>
+                    <!-- Token selection dropdown (OUTPUT) -->
+                    <div class="token-select dropdown" id="outputTokenDropdown">
+                        <div class="selected-token">
+                            <img class="selected-logo" src="assets/img/USDT0.png" alt="USDT0 logo">
+                            <span class="selected-name">USDT0</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="dropdown-menu">
+                            <div class="token-option" data-token="HYPE" data-logo="assets/img/hype.webp">
+                                <img src="assets/img/hype.webp" alt="HYPE"> HYPE
+                            </div>
+                            <div class="token-option" data-token="stHYPE" data-logo="assets/img/sthype.png">
+                                <img src="assets/img/sthype.png" alt="stHYPE Logo"> stHYPE
+                            </div>
+                            <div class="token-option" data-token="BUDDY" data-logo="assets/img/buddy.png">
+                                <img src="assets/img/buddy.png" alt="BUDDY"> BUDDY
+                            </div>
+                            <div class="token-option" data-token="USDXL" data-logo="assets/img/usdxl.svg">
+                                <img src="assets/img/usdxl.svg" alt="USDXL"> USDXL
+                            </div>
+                            <div class="token-option" data-token="KEI" data-logo="assets/img/KEI.jpg">
+                                <img src="assets/img/KEI.jpg" alt="KEI"> KEI
+                            </div>
+                            <div class="token-option" data-token="CATBAL" data-logo="assets/img/CATBAL.svg">
+                                <img src="assets/img/CATBAL.svg" alt="CATBAL"> CATBAL
+                            </div>
+                            <div class="token-option" data-token="FEUSD" data-logo="assets/img/feUSD.png">
+                                <img src="assets/img/feUSD.png" alt="FEUSD"> FEUSD
+                            </div>
+                            <div class="token-option" data-token="mHYPE" data-logo="assets/img/mHYPE.jpg">
+                                <img src="assets/img/mHYPE.jpg" alt="mHYPE"> mHYPE
+                            </div>
+                            <div class="token-option" data-token="USDT0" data-logo="assets/img/USDT0.png">
+                                <img src="assets/img/USDT0.png" alt="USDT0"> USDT0
+                            </div>
+                            <div class="token-option" data-token="PIP" data-logo="assets/img/PIP.jpg">
+                                <img src="assets/img/PIP.jpg" alt="PIP"> PIP
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="amount-mini">
+                        &nbsp; <!-- Espace vide pour aligner avec le haut -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-button">
+                SWAP
+            </div>
+        </div>
+    </div>
+
+<script src="javascripts/script.js"></script>
+</body>
+</html>

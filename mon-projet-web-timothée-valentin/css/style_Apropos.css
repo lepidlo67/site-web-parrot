@@ -1,0 +1,157 @@
+/* ___________________________ 1. VARIABLES & body ___________________________ */
+:root {
+    --parrot-green: rgb(49, 204, 152);
+    --parrot-dark: #2d9654;
+    --parrot-hover: #16a34a;
+    --glass-bg: rgba(0, 0, 0, 0.5);
+    --glass-border: rgba(49, 204, 152, 0.3);
+}
+
+body {
+    margin: 0; padding: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    overflow: hidden;
+    background: #000 url('../assets/img/arriere_1.png') no-repeat bottom / cover;
+}
+
+/* ___________________________ 2. HEADER & NAVIGATION ____________________________ */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 14, 8, 0.9);
+    padding: 15px 20px;
+    border-bottom: 1px solid rgb(25, 36, 46);
+    z-index: 1000;
+}
+
+.left-section, .right-section { flex: 1; display: flex; align-items: center; }
+.right-section { justify-content: flex-end; }
+
+.inline-nav { 
+    display: flex; 
+    justify-content: center; 
+    gap: 25px; 
+    flex-grow: 1; 
+}
+
+.inline-nav > a {
+    color: rgb(214, 214, 214);
+    text-decoration: none;
+    font-size: 20px;
+    font-family: Arial, sans-serif !important;
+    transition: all 0.2s ease;
+}
+
+.inline-nav > a:hover,  /* nav bar effet souris  */
+.inline-nav > a.active-link { 
+    color: var(--parrot-green) !important; 
+    font-weight: bold !important; 
+    font-size: 22px !important;
+    border-bottom: 2px solid var(--parrot-green);
+    padding-bottom: 5px;
+}
+
+/* Logo & Wallet */
+.audiowide { font-family: 'Audiowide', sans-serif; font-size: 20px; color: var(--parrot-green); }
+.logo-img { height: 30px; margin: 0 7px 0 15px; }
+.logo-link { display: flex; align-items: center; text-decoration: none; }
+
+.wallet-button {
+    display: flex; align-items: center; background-color: var(--parrot-dark);
+    color: white; border: none; padding: 5px 13px; border-radius: 20px;
+    font-size: 13px; cursor: pointer; transition: 0.2s;
+}
+.wallet-button:hover { background-color: var(--parrot-hover); }
+.wallet-icon { height: 22px; margin-left: 8px; border-radius: 50%; }
+
+/* ___________________________ 3. MISE EN PAGE & CARRÉS __________________________ */
+.main-content {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 50px;
+    padding: 40px 5%;
+    margin-top: 70px; 
+}
+
+.text-side, .carousel-container { flex: 1; max-width: 500px; }
+
+.about-card, .carousel { 
+    width: 100%;
+    aspect-ratio: 1 / 1; 
+    border-radius: 20px;
+    border: 2px solid var(--glass-border);
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+/* ___________________________ 4. TEXTES & CAPTIONS _____________________________ */
+.about-card h2, .carousel-caption h3 {
+    font-family: 'Audiowide', sans-serif;
+    color: var(--parrot-green);
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.about-card p, .carousel-caption p {
+    color: rgb(255, 255, 255);
+    font-size: 1.2rem;
+    line-height: 1.4;
+    width: 85%;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    padding: 30px; margin: 30px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10%;
+    display: flex !important; flex-direction: column;
+    justify-content: center; align-items: center;
+}
+
+.carousel-inner, .carousel-item, .carousel-item img { height: 100%; object-fit: cover; }
+
+/* ___________________________ 5. RESPONSIVE (SITE COMPLET) _____________________ */
+@media (max-width: 992px) {
+    header {
+        flex-direction: column; /* Empile le header sur mobile */
+        padding: 15px 10px;
+        gap: 15px;
+    }
+    
+    .inline-nav {
+        flex-wrap: wrap; /* Permet aux liens de passer à la ligne */
+        gap: 15px;
+    }
+
+    .main-content {
+        flex-direction: column;
+        margin-top: 30px;
+        gap: 30px;
+    }
+
+    .text-side, .carousel-container {
+        width: 100%;
+        max-width: 450px;
+    }
+
+    .about-card h2, .carousel-caption h3 { font-size: 1.8rem; }
+    .about-card p, .carousel-caption p { font-size: 1rem; }
+}
+
+@media (max-width: 480px) {
+    .inline-nav > a { font-size: 16px; }
+    .inline-nav > a:hover, .inline-nav > a.active-link { font-size: 17px !important; }
+    .carousel-caption { margin: 15px; padding: 15px; }
+}

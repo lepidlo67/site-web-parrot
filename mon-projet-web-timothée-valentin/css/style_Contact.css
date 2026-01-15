@@ -1,0 +1,166 @@
+/* ___________________________ 1. CONFIG GENERALE ___________________________ */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;           /* Fixe à 100% pour éviter le scroll */
+    overflow: hidden;         /* Empêche le défilement */
+    background-color: #000;
+    background-image: url('../assets/img/arriere_1.png'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: bottom;
+}
+
+/* ___________________________ 2. HEADER & NAVBAR ____________________________ */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 14, 8, 0.9);
+    color: rgb(107, 203, 164);
+    padding: 10px 0px;
+    border-bottom: 1px solid rgb(25, 36, 46);
+    z-index: 1000;
+    position: relative;
+}
+
+.left-section, .right-section { flex: 1; display: flex; align-items: center; }
+.left-section { justify-content: flex-start; }
+.right-section { justify-content: flex-end; }
+
+.inline-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    gap: 25px;
+}
+
+.inline-nav > a {
+    color: rgb(214, 214, 214);
+    text-decoration: none;
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+    transition: 0.2s;
+    border-bottom: 2px solid transparent; /* Prépare la bordure du hover */
+}
+
+/* État Actif et Survol */
+.inline-nav > a:hover, 
+.inline-nav > a.active-link { 
+    color: rgb(49, 204, 152) !important; 
+    font-weight: bold !important; 
+    font-size: 22px !important;
+    text-decoration: none; 
+    border-bottom: 2px solid rgb(49, 204, 152);
+    padding-bottom: 5px;
+}
+
+/* ___________________________ 3. LOGO & BOUTON WALLET ________________________ */
+.audiowide { font-family: 'Audiowide', sans-serif; font-size: 20px; color: rgb(49, 204, 152); }
+.logo-img { height: 30px; margin: 0 7px 0 15px; }
+.logo-link { display: flex; align-items: center; text-decoration: none; }
+
+.wallet-button {
+    display: flex; align-items: center; background-color: #2d9654; color: white;
+    border: none; padding: 5px 13px; border-radius: 20px; margin-right: 15px;
+    font-size: 13px; cursor: pointer;
+}
+.wallet-icon { height: 22px; margin-left: 8px; border-radius: 50%; }
+
+/* ___________________________ 4. FORMULAIRE CONTACT __________________________ */
+.contact-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 70px); /* Hauteur restante sous le header */
+}
+
+.contact-card { 
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(49, 204, 152, 0.4);
+    border-radius: 30px;
+    padding: 30px 40px;
+    width: 95%;
+    max-width: 600px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+}
+
+.contact-card h1 {
+    font-size: 1.8rem !important;
+    margin-bottom: 20px !important;
+}
+
+.form-label {
+    color: rgb(49, 204, 152);
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.form-control { 
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(49, 204, 152, 0.3) !important;
+    color: rgb(255, 255, 255) !important;
+    padding: 10px !important;
+    font-size: 1rem !important;
+}
+
+.form-control::placeholder { /* texte afficher avant saisie */
+    color: rgba(255, 255, 255, 0.156) !important; 
+    opacity: 1; 
+}
+
+.form-control:focus { 
+    border-color: rgb(49, 204, 152) !important;
+    box-shadow: 0 0 10px rgba(49, 204, 152, 0.3) !important;
+    outline: none;
+}
+
+/* Bouton Envoyer */
+.btn-parrot {
+    background-color: #2d9654 !important;
+    color: white !important;
+    font-weight: bold !important;
+    font-size: 1.1rem !important;
+    border-radius: 15px !important;
+    padding: 10px !important;
+    border: none !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-parrot:hover { /* effet avec la souris */
+    background-color: #16a34a !important;
+    transform: translateY(-2px) !important;
+}
+
+/* ___________________________ 5. RESPONSIVE (MOBILE) _________________________ */
+@media (max-width: 768px) {
+    body { overflow-y: auto; height: auto; } /* Permet le scroll sur petit écran */
+    
+    header {
+        flex-direction: column;
+        padding: 15px 10px;
+        gap: 15px;
+    }
+
+    .inline-nav {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .inline-nav > a { font-size: 16px; }
+    .inline-nav > a:hover, .inline-nav > a.active-link { font-size: 17px !important; }
+
+    .contact-main {
+        height: auto;
+        padding: 40px 10px;
+    }
+
+    .contact-card {
+        padding: 20px;
+        border-radius: 20px;
+    }
+}
