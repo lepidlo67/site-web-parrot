@@ -1,0 +1,135 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 125vh;                                  /* 100% de la hauteur de l'écran */
+    background-image: url('../assets/img/arriere_1.png');     /* Chemin vers ton image */
+    background-size: cover;                         /* Agrandit l'image pour couvrir tout l'écran */
+    background-repeat: no-repeat;                   /* Évite que l'image se répète */
+    background-position: bottom;                    /* fix en bas limage */
+}
+
+/* ___________________________bande_______________________________________________ */
+
+
+header {                                        /* bande */
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 14, 8);         /* léger fond sombre pour la lisibilité */
+    color: rgb(107, 203, 164);
+    padding: 15px 0px;                             /* taille border entre texte et ajout en dessous */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid rgb(25, 36, 46);    /* ligne blanche en bas de la bande */
+}
+
+/* Les sections gauche et droite occupent un espace égal */
+.left-section, .right-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.inline-nav > a {
+    color: rgb(214, 214, 214);
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 0; /* Supprime la marge gauche individuelle */
+}
+
+.inline-nav > a:hover, 
+.inline-nav > a.active-link { 
+    color: rgb(49, 204, 152) !important; 
+    font-weight: bold !important; 
+    font-size: 22px !important;
+    text-decoration: none; /* Optionnel : enlève le soulignement s'il y en a un */
+    border-bottom: 2px solid rgb(49, 204, 152);
+    padding-bottom: 5px;
+}
+
+.content {
+    margin-top: 500px;                       /* espace entre texte sous la bordure et la bordure*/
+    padding: 20px;                           /* espace marge sous la border */
+}
+
+.inline-nav {
+    display: flex;
+    justify-content: center;  /* Centre horizontalement les liens */
+    align-items: center;
+    flex-grow: 1;             /* Prend tout l'espace horizontal disponible */
+    gap: 25px;               /* Espacement entre les liens */
+}
+
+
+/* La section gauche aligne son contenu à gauche */
+.left-section {
+    justify-content: flex-start;
+}
+
+/* La section droite aligne son contenu à droite */
+.right-section {
+    justify-content: flex-end;
+}
+
+
+/* ___________________________parrotswap_______________________________________________ */
+
+.audiowide {
+    font-family: 'Audiowide', sans-serif;
+    font-size: 20px;                                /* taille titre parrotswap */
+    color: rgb(49, 204, 152);
+}
+
+.logo-img {
+    height: 30px;                                /* logo parrot */
+    margin-right: 7px;                          /* espace entre logo est parrotswap */
+    margin-left: 15px;                          /* espace entre logo et gauche */
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;                        /* Enlève le soulignement */
+}
+
+
+/* __________________________________________________________________________ */
+
+
+
+/* _____________________________wallet__________________________________________ */
+
+.wallet-button {
+    display: flex;
+    align-items: center;
+    background-color: #2d9654;            /* vert crypto */
+    color: white;
+    border: none;
+    padding: 5px 13px;                      /* largeur bonton ; longeur bonton gauche */
+    border-radius: 20px;                    /* arondie bonton */  
+    padding-right: 2px;                     /* longueur bonton droite logo */  
+    margin-right: 50px;                     /* pour décaler ver la gauche car barre */            
+    font-size: 13px;                        /* taile écriture */   
+    margin-right: 10px;                     /* distance entre le bonton et la marge droite */
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.wallet-button:hover {
+    background-color: #16a34a;
+}
+  
+.wallet-icon {
+    height: 22px;                           /* tail logo rabby */
+    margin-right: 6px;                      /* étendu bouton a droite logo */
+    border-radius: 50%;                     /* rend l’image parfaitement ronde */
+}
+
+.wallet-text {
+    margin-right: 5px;                     /* espace texte logo */
+}
+/* __________________________________________________________________________ */
+
